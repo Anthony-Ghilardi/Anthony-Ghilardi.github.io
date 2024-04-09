@@ -18,6 +18,7 @@ body {
 #arena-container{
     display: flex;
     justify-content: center;
+    
 }
 
 #arena{
