@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Coin Collector</h1>
+    <header>
+        <div id="title-container">
+            <h1 id="game-title">Coin Collector</h1>
+        </div>
+            <section id="header-container">
+                    <div>
+                        <button>Start Game</button>
+                    </div>
+                    <div id="timer">
+                        <span>Time Remaining: 60 seconds</span>
+                    </div>
+                    <div id="score-counter">
+                        <span>Coins Collected: 0</span>
+                    </div>
+            </section>
+    </header>
+        <main id="arena-container">
+            <canvas id="arena" width="1000" height="450" ></canvas>
+        </main>
+    <footer>
+        <section id="credits-container">
+            <h2 id="credit-text">Created by Anthony Ghilardi</h2>
+        </section>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

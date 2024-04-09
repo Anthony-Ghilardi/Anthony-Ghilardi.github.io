@@ -1,3 +1,31 @@
 body {
-    background-color: aquamarine;
+    background-color: #696771;
+}
+
+#title-container{
+    display: flex;
+    justify-content: center;
+    color: #1d1e17;
+}
+
+#header-container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    color: #1d1e17;
+}
+
+#arena-container{
+    display: flex;
+    justify-content: center;
+}
+
+#arena{
+    background-color: white;
+}
+
+#credits-container {
+    display: flex;
+    justify-content: center;
+    color: #1d1e17;
 }
