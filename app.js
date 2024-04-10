@@ -58,14 +58,23 @@ function updateGameArea(){
     myGameArea.clear();
     myCharacter.speedX = 0;
     myCharacter.speedY = 0;
-    if (myGameArea.keys && myGameArea.keys["a"] || myGameArea.keys["A"]) {myCharacter.speedX -= 3;}
-    if (myGameArea.keys && myGameArea.keys["d"] || myGameArea.keys["D"]) {myCharacter.speedX += 3;}
-    if (myGameArea.keys && myGameArea.keys["w"] || myGameArea.keys["W"]) {myCharacter.speedY -= 3;}
-    if (myGameArea.keys && myGameArea.keys["s"] || myGameArea.keys["S"]) {myCharacter.speedY += 3;}
+    if (myGameArea.keys && (myGameArea.keys["a"] || myGameArea.keys["A"])) {myCharacter.speedX -= 3;}
+    if (myGameArea.keys && (myGameArea.keys["d"] || myGameArea.keys["D"])) {myCharacter.speedX += 3;}
+    if (myGameArea.keys && (myGameArea.keys["w"] || myGameArea.keys["W"])) {myCharacter.speedY -= 3;}
+    if (myGameArea.keys && (myGameArea.keys["s"] || myGameArea.keys["S"])) {myCharacter.speedY += 3;}
 
-    myCharacter.newPos();
+    let newX = myCharacter.x + myCharacter.speedX;
+    let newY = myCharacter.y + myCharacter.speedY;
+
+    if (newX >= 0 && newX <= myGameArea.canvas.width - myCharacter.width) {
+        myCharacter.x = Math.round(newX); // Round the position coordinates
+    }
+    if (newY >= 0 && newY <= myGameArea.canvas.height - myCharacter.height) {
+        myCharacter.y = Math.round(newY); // Round the position coordinates
+    }
     myCharacter.update();
 }
+
 
 /********** This function add character movement**********/
 function moveUp() {
