@@ -2,6 +2,9 @@
 
 function startGame() {
     myGameArea.start();
+    myCharacter = new component (30, 30, "red", 470, 225);
+    createCoins();
+    
 }
 
 let myGameArea = {
@@ -29,10 +32,6 @@ let myGameArea = {
 
 /********** This creates the playable character and lays the foundation for movement **********/
 let myCharacter;
-function startGame() {
-    myGameArea.start();
-    myCharacter = new component (30, 30, "red", 470, 225);
-}
 
 function component(width, height, color, x, y) {
     this.width = width;
@@ -52,10 +51,104 @@ function component(width, height, color, x, y) {
     }
 }
 
+/********** This creates the coins which the player will collect **********/
+function Coin(x, y, radius, color) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.color = color;
+}
+
+Coin.prototype.draw = function(ctx) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.closePath();
+}
+
+/********** This creates random coords for coins **********/
+let coins = [];
+let numberOfCoinsToGenerate = 15;
+
+function generateRandomPosition() {
+    const maxX = myGameArea.canvas.width - 20;
+    const maxY = myGameArea.canvas.height - 20;
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+    return { x: randomX, y: randomY };
+}
+
+function createCoins() {
+    const canvas = document.getElementById("arena");
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < numberOfCoinsToGenerate; i++) {
+        const randomPosition = generateRandomPosition(); 
+        let coin = new Coin(randomPosition.x, randomPosition.y, 10, "yellow");
+        coins.push(coin);
+    }
+    
+    coins.forEach(function(coin){
+        coin.draw(ctx);
+    });
+}
+
+
+/********** This controls coin collision and collection **********/
+Coin.prototype.updatePosition = function(){
+    for (let i = 0; i < coins.length;) {
+        let thisCoin = coins[i];
+        if (
+            thisCoin.x < myCharacter.x + myCharacter.width &&
+            thisCoin.x + thisCoin.radius > myCharacter.x &&
+            thisCoin.y < myCharacter.y + myCharacter.height &&
+            thisCoin.y + thisCoin.radius > myCharacter.y
+        ) {
+            coins.splice(i, 1);
+            console.log('Coin collected!');
+        } else {
+            i++;
+        }
+    }
+    console.log('Collision detection loop finished!');
+}
+
+
+/********** This Controls the counter for the coins collected **********/
+function coinScore() {
+    let initialScore = 0;
+    let scoreSpan = document.createElement("span");
+    scoreSpan.textContent = `Coin counter: ${initialScore}`;
+
+    let scoreContainer = document.getElementById("score-counter");
+    scoreContainer.appendChild(scoreSpan);
+
+    for (let i = 0; i < coins.length; i++) {
+        let thisCoin = coins[i];
+        if (
+            thisCoin.x < myCharacter.x + myCharacter.width &&
+            thisCoin.x + thisCoin.radius > myCharacter.x &&
+            thisCoin.y < myCharacter.y + myCharacter.height &&
+            thisCoin.y + thisCoin.radius > myCharacter.y
+        ) {
+            coins.splice(i, 1);
+            initialScore++;
+            scoreSpan.textContent = `Coin counter: ${initialScore}`;
+            console.log('Coin collected!');
+        }
+    }
+}
+
+console.log('Collision detection loop finished!');
+
 /********** This function adds and updates frames for the game **********/
 /********** This function also controls the keyboard inputs for charactermovement **********/
 function updateGameArea(){
     myGameArea.clear();
+
     myCharacter.speedX = 0;
     myCharacter.speedY = 0;
     if (myGameArea.keys && (myGameArea.keys["a"] || myGameArea.keys["A"])) {myCharacter.speedX -= 3;}
@@ -72,8 +165,17 @@ function updateGameArea(){
     if (newY >= 0 && newY <= myGameArea.canvas.height - myCharacter.height) {
         myCharacter.y = Math.round(newY); // Round the position coordinates
     }
+
+    coins.forEach(function(coin){
+        coin.updatePosition();
+        coin.draw(myGameArea.context);
+    });
+
     myCharacter.update();
+
+    
 }
+
 
 
 /********** This function add character movement**********/
@@ -99,3 +201,4 @@ function stopMove() {
 }
 /********** This calls the startGame function and begins the game **********/
 startGame();
+createCoins();
