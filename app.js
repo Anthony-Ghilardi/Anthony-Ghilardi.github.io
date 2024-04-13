@@ -4,7 +4,7 @@ function startGame() {
     myGameArea.start();
     myCharacter = new component (30, 30, "red", 470, 225);
     createCoins();
-    
+    renderScore();
 }
 
 let myGameArea = {
@@ -117,15 +117,24 @@ Coin.prototype.updatePosition = function(){
 }
 
 
-/********** This Controls the counter for the coins collected **********/
-function coinScore() {
-    let initialScore = 0;
-    let scoreSpan = document.createElement("span");
-    scoreSpan.textContent = `Coin counter: ${initialScore}`;
+/********** This series of functions controls the coin counter **********/
+let initialScore = 0;
+let scoreSpan;
+
+function updateScore(){
+    initialScore++;
+    scoreSpan.textContent = `Coin Counter: ${initialScore}`;
+}
+
+function renderScore() {
+    scoreSpan = document.createElement("span");
+    scoreSpan.textContent = `Coin Counter: ${initialScore}`;
 
     let scoreContainer = document.getElementById("score-counter");
     scoreContainer.appendChild(scoreSpan);
+}
 
+function coinScore() {
     for (let i = 0; i < coins.length; i++) {
         let thisCoin = coins[i];
         if (
@@ -135,12 +144,12 @@ function coinScore() {
             thisCoin.y + thisCoin.radius > myCharacter.y
         ) {
             coins.splice(i, 1);
-            initialScore++;
-            scoreSpan.textContent = `Coin counter: ${initialScore}`;
+            updateScore();
             console.log('Coin collected!');
         }
     }
 }
+
 
 console.log('Collision detection loop finished!');
 
@@ -166,17 +175,32 @@ function updateGameArea(){
         myCharacter.y = Math.round(newY); // Round the position coordinates
     }
 
+    coinScore();
+
     coins.forEach(function(coin){
         coin.updatePosition();
         coin.draw(myGameArea.context);
     });
 
     myCharacter.update();
-
-    
 }
 
-
+/********** This function appends a timer to the HTML page character **********/
+function gameTimer() {
+    let seconds = 61;
+    function tick() {
+        let counter = document.getElementById("timer");
+        seconds--;
+        counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+        if (seconds > 0) {
+            setTimeout(tick, 1000);
+        } else {
+            // possibly add end game screen popup here
+        }
+    }
+    tick();
+}
+gameTimer();
 
 /********** This function add character movement**********/
 function moveUp() {
