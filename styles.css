@@ -23,6 +23,7 @@ body {
 
 #arena {
     background-color: white;
+    width: 60%;
 }
 
 #end-game-popup {

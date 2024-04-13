@@ -79,7 +79,7 @@ Coin.prototype.draw = function(ctx) {
 
 /********** This creates random coords for coins **********/
 let coins = [];
-let numberOfCoinsToGenerate = 15;
+let numberOfCoinsToGenerate = 20;
 
 function generateRandomPosition() {
     const maxX = myGameArea.canvas.width - 20;
