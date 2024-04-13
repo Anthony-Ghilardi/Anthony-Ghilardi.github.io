@@ -2,7 +2,7 @@ body {
     background-color: #696771;
 }
 
-#title-container{
+#title-container {
     display: flex;
     justify-content: center;
     color: #1d1e17;
@@ -15,14 +15,41 @@ body {
     color: #1d1e17;
 }
 
-#arena-container{
+#arena-container {
     display: flex;
     justify-content: center;
     
 }
 
-#arena{
+#arena {
     background-color: white;
+}
+
+#end-game-popup {
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    max-width: 600px;
+    height: 15%;
+    max-height: 600px;
+    padding: 40px;
+    background: white;
+    border: 2px solid black;
+    z-index: 100;
+    text-align: center;
+}
+
+#end-game-popup h3 {
+    color: red;
+    margin-bottom: 20px;
+}
+
+#end-game-popup p {
+    font-size: 18px;
+    color: #1d1e17;
 }
 
 #credits-container {

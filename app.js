@@ -106,6 +106,13 @@ function createCoins() {
     });
 }
 
+/********** This function generates new waves of coins once all previous coins are collected **********/
+function coinWave(){
+    if(coins.length === 0){
+        createCoins();
+    }
+}
+
 
 /********** This controls coin collision and collection **********/
 Coin.prototype.updatePosition = function(){
@@ -133,12 +140,12 @@ let scoreSpan;
 
 function updateScore(){
     initialScore++;
-    scoreSpan.textContent = `Coin Counter: ${initialScore}`;
+    scoreSpan.textContent = `Coins Collected: ${initialScore}`;
 }
 
 function renderScore() {
     scoreSpan = document.createElement("span");
-    scoreSpan.textContent = `Coin Counter: ${initialScore}`;
+    scoreSpan.textContent = `Coins Collected: ${initialScore}`;
 
     let scoreContainer = document.getElementById("score-counter");
     scoreContainer.appendChild(scoreSpan);
@@ -186,6 +193,7 @@ function updateGameArea(){
     }
 
     coinScore();
+    coinWave();
 
     coins.forEach(function(coin){
         coin.updatePosition();
@@ -195,7 +203,7 @@ function updateGameArea(){
     myCharacter.update();
 }
 
-/********** This function appends a timer to the HTML page character **********/
+/********** This function appends a timer to the HTML page **********/
 function gameTimer() {
     let seconds = 61;
     function tick() {
@@ -205,7 +213,10 @@ function gameTimer() {
         if (seconds > 0) {
             setTimeout(tick, 1000);
         } else {
-            // possibly add end game screen popup here
+            clearInterval(myGameArea.interval);
+
+            document.getElementById("final-score").textContent = "Coins Collected: " + initialScore;
+            document.getElementById("end-game-popup").style.display = "block";
         }
     }
     tick();
