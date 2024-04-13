@@ -1,11 +1,21 @@
 /********** This creates the play area and appends it to the main element on HTML **********/
-
 function startGame() {
-    myGameArea.start();
-    myCharacter = new component (30, 30, "red", 470, 225);
-    createCoins();
-    renderScore();
+    let button = document.getElementById("start-button");
+    button.addEventListener("click", function(){
+            console.log("You started the game!");
+            
+            if(!window.gameStarted) {
+                window.gameStarted = true;
+                myGameArea.start();
+                myCharacter = new component (30, 30, "red", 470, 225);
+                gameTimer();
+                createCoins();
+                renderScore();
+        }
+    });
 }
+
+window.gameStarted = false;
 
 let myGameArea = {
     canvas: document.createElement("canvas"),
@@ -200,7 +210,7 @@ function gameTimer() {
     }
     tick();
 }
-gameTimer();
+
 
 /********** This function add character movement**********/
 function moveUp() {
@@ -223,6 +233,7 @@ function stopMove() {
     myCharacter.speedX = 0;
     myCharacter.speedY = 0;
 }
-/********** This calls the startGame function and begins the game **********/
-startGame();
-createCoins();
+
+document.addEventListener('DOMContentLoaded', function() {
+    startGame();
+});
