@@ -27,10 +27,10 @@ Each key should be pressed and held down to maintain movement:
 
 Multiple keys can be pressed at once to cause diagonal movement:
 
-- W + D = Moves the character diagonally up and to the right.
-- W + A = Moves the character digaonally up and to the left.
-- S + D = Moves the character diagonally down and to the right.
-- S + A = Moves the character digaonally down and to the left.
+- W + D = Moves the character diagonally Up and to the Right
+- W + A = Moves the character digaonally Up and to the Left
+- S + D = Moves the character diagonally Down and to the Right
+- S + A = Moves the character digaonally Down and to the Left
 
 How to restart the game:
 - Refresh your browser after being presented with the game over screen.
@@ -40,3 +40,4 @@ How to restart the game:
 - Restart button which will cause the game to restart, rather than having to refresh the browser.
 - Local leaderboard to track the players highest score across multiple games.
 - Different control inputs such as mouse movement, possibly a button to choose which input you prefer.
+- Power-ups to increase the player movement speed.
