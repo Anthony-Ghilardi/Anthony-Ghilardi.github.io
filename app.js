@@ -1,4 +1,5 @@
-/********** This creates the play area and appends it to the main element on HTML **********/
+/********** This creates the play area and appends it to the main element on HTML This function
+ also calls all other necessary functions to begin the game**********/
 function startGame() {
     let button = document.getElementById("start-button");
     button.addEventListener("click", function(){
@@ -11,6 +12,9 @@ function startGame() {
                 gameTimer();
                 createCoins();
                 renderScore();
+                hideInfo();
+                
+                button.style.display = "none";
         }
     });
 }
@@ -209,7 +213,7 @@ function gameTimer() {
     function tick() {
         let counter = document.getElementById("timer");
         seconds--;
-        counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+        counter.innerHTML = "Time Remaining: 0:" + (seconds < 10 ? "0" : "") + String(seconds);
         if (seconds > 0) {
             setTimeout(tick, 1000);
         } else {
@@ -248,3 +252,12 @@ function stopMove() {
 document.addEventListener('DOMContentLoaded', function() {
     startGame();
 });
+
+/********** This function hides the score and timer until the start button is clicked **********/
+function hideInfo(){
+    let hideTimer = document.getElementById("timer")
+        hideTimer.style.display = "initial";
+
+    let hideScore = document.getElementById("score-counter")
+        hideScore.style.display = "initial";
+}
