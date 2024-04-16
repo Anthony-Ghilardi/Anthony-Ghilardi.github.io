@@ -28,6 +28,10 @@ body {
     background-color: #fff;
     padding: 16px;
     margin: 16px;
+    border-style: solid;
+    border-radius: 16px;
+    border-color: #e6c300;
+    border-width: 6px;
 }
 
 #score-counter{
@@ -35,6 +39,10 @@ body {
     background-color: #fff;
     padding: 16px;
     margin: 16px;
+    border-style: solid;
+    border-radius: 16px;
+    border-color: #e6c300;
+    border-width: 6px;
 }
 
 #start-button-container {
@@ -46,7 +54,10 @@ body {
     font-family: "Press Start", sans-serif;
     font-size: 16px;
     transition-duration: 0.4s;
+    border-style: solid;
     border-radius: 16px;
+    border-color: #e6c300;
+    border-width: 6px;
     padding: 16px;
 }
 
@@ -73,22 +84,27 @@ body {
     transform: translate(-50%, -50%);
     width: 40%;
     max-width: 600px;
-    height: 15%;
-    max-height: 600px;
+    height: 25%;
+    max-height: 800px;
     padding: 40px;
     background: white;
     border: 2px solid black;
     z-index: 100;
     text-align: center;
+    border-style: solid;
+    border-radius: 16px;
+    border-color: #e6c300;
+    border-width: 6px;
 }
 
 #end-game-popup h3 {
     color: red;
+    font-size: 32px;
     margin-bottom: 20px;
 }
 
 #end-game-popup p {
-    font-size: 18px;
+    font-size: 24px;
     color: #1d1e17;
 }
 
