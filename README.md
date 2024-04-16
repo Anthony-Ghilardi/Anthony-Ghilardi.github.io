@@ -2,41 +2,41 @@
 
 ## Description
 
- My game will feature a playable character which starts in the center of a rectangular play area. After the user starts the game, they will control the character, having it move around the play area with the goal of collecting as many coins as possible before a timer expires.
+The objective of this game is to collect as many coins as possible within one minute. To accomplish this goal you will begin the game by clicking the "Start Game" button. This will begin the timer and allow you to move your character. Control inputs and other instrcutions can be found below. How many coins can you collect? Remember to have fun! 
 
 
 ## Deployment
 
-The web game is deployed at __________________ (YOUR DEPLOYED GITHUB.IO URL).
+My deployed game can be found at [(https://anthony-ghilardi.github.io/Milestone-Project-1/)]
 
 
 ## Game Logic
 
 ```
-XXX Remember to delete the instructions for this repo section below before finalizing and submitting your project because this project is part of your portfolio you should be showcasing. XXX
 
-Instructions: 
-The writing should describe in plain, simple language the logic of the game.
-Describe the logic involved in player decisions.
-  - What are the choices available to the player?
-  - What happens when the player makes a choice?
-Describe the logic that evaluates the player's victory/loss/progress status:
+When you begin the game a series of randomly generated coins will spawn across the play area. The player will have the choice to collect any coin in any order they please. Upon collecting the coin the score counter will increase by one. After collecting all coins present within the play area a new series of coins will spawn onto the map and the player will continue to collect coins until the one minute timer expires. Once the one minute timer expires the player will be presented with a game over screen which includes their final score and instructions on how to restart/replay the game.
 
-___________________________________________________________________________________
+Control Inputs:
+Each key should be pressed and held down to maintain movement.
 
-___________________________________________________________________________________
+W = Moves character Up
+S = Moves character Down
+A = Moves character Left
+D = Moves character Right
 
-___________________________________________________________________________________
+Multiple keys can be pressed at once to cause diagonal movement.
 
-___________________________________________________________________________________
+W + D = Moves the character diagonally up and to the right.
+W + A = Moves the character digaonally up and to the left.
+S + D = Moves the character diagonally down and to the right.
+S + A = Moves the character digaonally down and to the left.
 
-___________________________________________________________________________________
-```
+How to restart the game:
+Refresh your browser after being presented with the game over screen.
 
 ### Post-MVP Plans
 
-XXX Replace the text below as you list with your own text then delete this line. XXX
 
-- One great idea I hope to be able to add in before the project deadline.
-- Another that will be a stretch.
-- Something else I don't technically know how to do... *yet*. :)
+- Restart button which will cause the game to restart, rather than having to refresh the browser.
+- Local leaderboard to track the players highest score across multiple games.
+- Different control inputs such as mouse movement, possibly a button to choose which input you prefer.
