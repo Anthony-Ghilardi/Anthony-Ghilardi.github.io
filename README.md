@@ -4,15 +4,11 @@
 
 The objective of this game is to collect as many coins as possible within one minute. To accomplish this goal you will begin the game by clicking the "Start Game" button. This will begin the timer and allow you to move your character. Control inputs and other instrcutions can be found below. How many coins can you collect? Remember to have fun! 
 
-
 ## Deployment
 
 My deployed game can be found at [(https://anthony-ghilardi.github.io/Milestone-Project-1/)]
 
-
 ## Game Logic
-
-```
 
 When you begin the game a series of randomly generated coins will spawn across the play area. The player will have the choice to collect any coin in any order they please. Upon collecting the coin the score counter will increase by one. After collecting all coins present within the play area a new series of coins will spawn onto the map and the player will continue to collect coins until the one minute timer expires. Once the one minute timer expires the player will be presented with a game over screen which includes their final score and instructions on how to restart/replay the game.
 
@@ -34,8 +30,7 @@ S + A = Moves the character digaonally down and to the left.
 How to restart the game:
 Refresh your browser after being presented with the game over screen.
 
-### Post-MVP Plans
-
+## Post-MVP Plans
 
 - Restart button which will cause the game to restart, rather than having to refresh the browser.
 - Local leaderboard to track the players highest score across multiple games.
