@@ -12,15 +12,20 @@ My deployed game can be found at [(https://anthony-ghilardi.github.io/Milestone-
 
 When you begin the game a series of randomly generated coins will spawn across the play area. The player will have the choice to collect any coin in any order they please. Upon collecting the coin the score counter will increase by one. After collecting all coins present within the play area a new series of coins will spawn onto the map and the player will continue to collect coins until the one minute timer expires. Once the one minute timer expires the player will be presented with a game over screen which includes their final score and instructions on how to restart/replay the game.
 
+How to start the game:
+- Click the "Start Game" button
+- This will begin the one minute timer
+- This will also create the play area and allow for you to begin moving your character
+
 Control Inputs:
-Each key should be pressed and held down to maintain movement.
+Each key should be pressed and held down to maintain movement:
 
 - W = Moves character Up
 - S = Moves character Down
 - A = Moves character Left
 - D = Moves character Right
 
-Multiple keys can be pressed at once to cause diagonal movement.
+Multiple keys can be pressed at once to cause diagonal movement:
 
 - W + D = Moves the character diagonally up and to the right.
 - W + A = Moves the character digaonally up and to the left.
@@ -28,7 +33,7 @@ Multiple keys can be pressed at once to cause diagonal movement.
 - S + A = Moves the character digaonally down and to the left.
 
 How to restart the game:
-Refresh your browser after being presented with the game over screen.
+- Refresh your browser after being presented with the game over screen.
 
 ## Post-MVP Plans
 
