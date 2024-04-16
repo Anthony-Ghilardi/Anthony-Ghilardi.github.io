@@ -15,17 +15,17 @@ When you begin the game a series of randomly generated coins will spawn across t
 Control Inputs:
 Each key should be pressed and held down to maintain movement.
 
-W = Moves character Up
-S = Moves character Down
-A = Moves character Left
-D = Moves character Right
+- W = Moves character Up
+- S = Moves character Down
+- A = Moves character Left
+- D = Moves character Right
 
 Multiple keys can be pressed at once to cause diagonal movement.
 
-W + D = Moves the character diagonally up and to the right.
-W + A = Moves the character digaonally up and to the left.
-S + D = Moves the character diagonally down and to the right.
-S + A = Moves the character digaonally down and to the left.
+- W + D = Moves the character diagonally up and to the right.
+- W + A = Moves the character digaonally up and to the left.
+- S + D = Moves the character diagonally down and to the right.
+- S + A = Moves the character digaonally down and to the left.
 
 How to restart the game:
 Refresh your browser after being presented with the game over screen.
