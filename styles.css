@@ -73,6 +73,7 @@ body {
 
 #arena {
     background-color: white;
+    box-shadow: 10px 10px 15px black;
     width: 60%;
 }
 

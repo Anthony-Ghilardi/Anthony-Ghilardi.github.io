@@ -31,6 +31,7 @@ let myGameArea = {
         let mainElement = document.getElementById("arena-container");
         mainElement.insertBefore(this.canvas, mainElement.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
+
         window.addEventListener('keydown', function (e) {
             myGameArea.keys = myGameArea.keys || {};
             myGameArea.keys[e.key] = true;
@@ -178,7 +179,7 @@ console.log('Collision detection loop finished!');
 /********** This function also controls the keyboard inputs for charactermovement **********/
 function updateGameArea(){
     myGameArea.clear();
-
+    
     myCharacter.speedX = 0;
     myCharacter.speedY = 0;
     if (myGameArea.keys && (myGameArea.keys["a"] || myGameArea.keys["A"])) {myCharacter.speedX -= 3;}
