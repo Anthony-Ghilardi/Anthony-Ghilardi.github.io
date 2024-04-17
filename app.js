@@ -35,7 +35,7 @@ let myGameArea = {
 
         // Load and store the background image
         this.background = new Image();
-        this.background.src = "/assets/game-background-image.png";
+        this.background.src = "./assets/game-background-image.png";
         this.background.onload = () => {
             this.context.drawImage(this.background, 0, 0, this.canvas.width, this.canvas.height);
         };
@@ -103,7 +103,7 @@ function generateRandomPosition() {
 function createCoins() {
     const canvas = document.getElementById("arena");
     const ctx = canvas.getContext("2d");
-    const imgSources =["/meats/meat1.png", "/meats/meat2.png", "/meats/meat3.png", "/meats/meat4.png"]
+    const imgSources =["./meats/meat1.png", "./meats/meat2.png", "./meats/meat3.png", "./meats/meat4.png"]
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
