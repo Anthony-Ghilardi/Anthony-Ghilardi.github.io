@@ -22,6 +22,8 @@ function startGame() {
 
 window.gameStarted = false;
 
+
+/********** This creates the canvas, appends the background img and lays the foundation for movement **********/
 let myGameArea = {
   canvas: document.createElement("canvas"),
   start: function () {
@@ -247,7 +249,7 @@ function updateGameArea() {
   myCharacter.update();
 }
 
-/********** This function appends a timer to the HTML page **********/
+/********** This function appends a timer to the HTML page and creates the end game popup when the tiemr expires **********/
 function gameTimer() {
   let seconds = 61;
   function tick() {
@@ -297,6 +299,12 @@ function hideInfo() {
 
   let hideScore = document.getElementById("score-counter");
   hideScore.style.display = "initial";
+
+  let hideTitle = document.getElementById("game-title");
+  hideTitle.style.display = "none";
+
+  let hideCredit = document.getElementById("credit-text");
+  hideCredit.style.display = "none";
 }
 
 /********** This function loads the background image **********/
