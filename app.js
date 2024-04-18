@@ -156,7 +156,7 @@ Coin.prototype.updatePosition = function () {
       thisCoin.y + thisCoin.radius > myCharacter.y
     ) {
       coins.splice(i, 1);
-      console.log("Coin collected!");
+      console.log("Meat Eaten!");
     } else {
       i++;
     }
@@ -170,12 +170,12 @@ let scoreSpan;
 
 function updateScore() {
   initialScore++;
-  scoreSpan.textContent = `Coins Collected: ${initialScore}`;
+  scoreSpan.textContent = `Meat Eaten: ${initialScore}`;
 }
 
 function renderScore() {
   scoreSpan = document.createElement("span");
-  scoreSpan.textContent = `Coins Collected: ${initialScore}`;
+  scoreSpan.textContent = `Meat Eaten: ${initialScore}`;
 
   let scoreContainer = document.getElementById("score-counter");
   scoreContainer.appendChild(scoreSpan);
@@ -192,7 +192,7 @@ function coinScore() {
     ) {
       coins.splice(i, 1);
       updateScore();
-      console.log("Coin collected!");
+      console.log("Meat Eaten!");
     }
   }
 }
@@ -261,7 +261,7 @@ function gameTimer() {
       clearInterval(myGameArea.interval);
 
       document.getElementById("final-score").textContent =
-        "Coins Collected: " + initialScore;
+        "Meat Eaten: " + initialScore;
       document.getElementById("end-game-popup").style.display = "block";
     }
   }
