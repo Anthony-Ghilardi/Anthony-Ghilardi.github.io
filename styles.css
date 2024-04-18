@@ -30,7 +30,7 @@ body {
     margin: 16px;
     border-style: solid;
     border-radius: 16px;
-    border-color: #e6c300;
+    border-color: #800000;
     border-width: 6px;
 }
 
@@ -41,7 +41,7 @@ body {
     margin: 16px;
     border-style: solid;
     border-radius: 16px;
-    border-color: #e6c300;
+    border-color: #800000;
     border-width: 6px;
 }
 
@@ -56,13 +56,13 @@ body {
     transition-duration: 0.4s;
     border-style: solid;
     border-radius: 16px;
-    border-color: #e6c300;
+    border-color: #800000;
     border-width: 6px;
     padding: 16px;
 }
 
 #start-button:hover {
-    background-color: #e6c300;
+    background-color: #800000;
 }
 
 #arena-container {
@@ -85,21 +85,21 @@ body {
     transform: translate(-50%, -50%);
     width: 40%;
     max-width: 600px;
-    height: 25%;
+    height: 20%;
     max-height: 800px;
     padding: 40px;
-    background: white;
-    border: 2px solid black;
+    background: #fff;
+    border: 2px solid;
     z-index: 100;
     text-align: center;
     border-style: solid;
     border-radius: 16px;
-    border-color: #e6c300;
+    border-color: #800000;
     border-width: 6px;
 }
 
 #end-game-popup h3 {
-    color: red;
+    color: #800000;
     font-size: 32px;
     margin-bottom: 20px;
 }

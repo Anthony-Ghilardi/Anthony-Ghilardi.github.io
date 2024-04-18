@@ -8,7 +8,7 @@ function startGame() {
             if(!window.gameStarted) {
                 window.gameStarted = true;
                 myGameArea.start();
-                myCharacter = new component (30, 30, "red", 470, 225);
+                myCharacter = new component (60, 60, "./assets/dinosaur.png", 470, 225);
                 gameTimer();
                 createCoins();
                 renderScore();
@@ -57,17 +57,19 @@ let myGameArea = {
 /********** This creates the playable character and lays the foundation for movement **********/
 let myCharacter;
 
-function component(width, height, color, x, y) {
+function component(width, height, imageSrc, x, y) {
     this.width = width;
     this.height = height;
     this.speedX = 0;
     this.speedY = 0;
     this.x = x;
     this.y = y;
+    this.image = new Image();
+    this.image.src = "./assets/dinosaur.png";
+
     this.update = function(){
         ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
     this.newPos = function(){
         this.x += this.speedX;
@@ -104,13 +106,14 @@ function createCoins() {
     const canvas = document.getElementById("arena");
     const ctx = canvas.getContext("2d");
     const imgSources =["./meats/meat1.png", "./meats/meat2.png", "./meats/meat3.png", "./meats/meat4.png"]
+    const newRadius = 20;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < numberOfCoinsToGenerate; i++) {
         const randomPosition = generateRandomPosition(); 
         const imgSrc = imgSources[Math.floor(Math.random()* imgSources.length)];
-        let coin = new Coin(randomPosition.x, randomPosition.y, 10, imgSrc);
+        let coin = new Coin(randomPosition.x, randomPosition.y, newRadius, imgSrc);
         coins.push(coin);
     }
     
