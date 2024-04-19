@@ -131,14 +131,15 @@ body {
   margin: 16px;
 }
 
-#keyboard-inputs h4, li{
+#keyboard-inputs h4,
+li {
   font-size: 20px;
   padding: 4px;
   margin: 27px;
   justify-content: center;
 }
 
-#wasd-photo{
+#wasd-photo {
   width: 15vw;
   height: 15vh;
 }

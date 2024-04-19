@@ -22,7 +22,6 @@ function startGame() {
 
 window.gameStarted = false;
 
-
 /********** This creates the canvas, appends the background img and lays the foundation for movement **********/
 let myGameArea = {
   canvas: document.createElement("canvas"),
@@ -231,8 +230,7 @@ function updateGameArea() {
   let newX = myCharacter.x + myCharacter.speedX;
   let newY = myCharacter.y + myCharacter.speedY;
 
-
-/********** Keeps the character from leaving the play area **********/
+  /********** Keeps the character from leaving the play area **********/
   if (newX >= 0 && newX <= myGameArea.canvas.width - myCharacter.width) {
     myCharacter.x = Math.round(newX); // Round the position coordinates
   }
