@@ -231,6 +231,8 @@ function updateGameArea() {
   let newX = myCharacter.x + myCharacter.speedX;
   let newY = myCharacter.y + myCharacter.speedY;
 
+
+/********** Keeps the character from leaving the play area **********/
   if (newX >= 0 && newX <= myGameArea.canvas.width - myCharacter.width) {
     myCharacter.x = Math.round(newX); // Round the position coordinates
   }
