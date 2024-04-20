@@ -22,7 +22,7 @@ function startGame() {
 
 window.gameStarted = false;
 
-/********** This creates the canvas, appends the background img and lays the foundation for movement **********/
+/********** This creates the canvas, appends the background img ands event listeners for movement **********/
 let myGameArea = {
   canvas: document.createElement("canvas"),
   start: function () {
