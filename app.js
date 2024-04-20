@@ -270,28 +270,6 @@ function gameTimer() {
   tick();
 }
 
-/********** This function add character movement**********/
-function moveUp() {
-  myCharacter.speedY -= 1;
-}
-
-function moveDown() {
-  myCharacter.speedY += 1;
-}
-
-function moveLeft() {
-  myCharacter.speedX -= 1;
-}
-
-function moveRight() {
-  myCharacter.speedX += 1;
-}
-
-function stopMove() {
-  myCharacter.speedX = 0;
-  myCharacter.speedY = 0;
-}
-
 /********** This function hides the score and timer until the start button is clicked **********/
 function hideInfo() {
   let hideTimer = document.getElementById("timer");
