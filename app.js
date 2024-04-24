@@ -3,7 +3,6 @@
 function startGame() {
   let button = document.getElementById("start-button");
   button.addEventListener("click", function () {
-    console.log("You started the game!");
 
     if (!window.gameStarted) {
       window.gameStarted = true;
@@ -157,12 +156,10 @@ Coin.prototype.updatePosition = function () {
       thisCoin.y + thisCoin.radius > myCharacter.y
     ) {
       coins.splice(i, 1);
-      console.log("Meat Eaten!");
     } else {
       i++;
     }
   }
-  console.log("Collision detection loop finished!");
 };
 
 /********** This series of functions controls the coin counter **********/
@@ -193,12 +190,9 @@ function coinScore() {
     ) {
       coins.splice(i, 1);
       updateScore();
-      console.log("Meat Eaten!");
     }
   }
 }
-
-console.log("Collision detection loop finished!");
 
 /********** This function adds and updates frames for the game **********/
 /********** This function also controls the keyboard inputs for charactermovement **********/
@@ -251,7 +245,7 @@ function updateGameArea() {
 
 /********** This function appends a timer to the HTML page and creates the end game popup when the tiemr expires **********/
 function gameTimer() {
-  let seconds = 61;
+  let seconds = 31;
   function tick() {
     let counter = document.getElementById("timer");
     seconds--;
