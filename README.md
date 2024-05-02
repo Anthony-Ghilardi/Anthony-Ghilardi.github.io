@@ -2,7 +2,7 @@
 
 ## Description
 
-The objective of this game is to collect as many coins as possible within one minute. You will begin the game by clicking the "Start Game" button to accomplish this goal. The timer will then begin counting down, allowing you to move your character. Control inputs and other instructions can be found below. How much meat can you eat? Remember to have fun! 
+The objective of this game is to collect as much meat as possible within one minute. You will begin the game by clicking the "Start Game" button to accomplish this goal. The timer will then begin counting down, allowing you to move your character. Control inputs and other instructions can be found below. How much meat can you eat? Remember to have fun! 
 
 ## Deployment
 
